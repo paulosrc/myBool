@@ -2,7 +2,7 @@
 
 ## Português
 
-Este programa é uma reinterpretação da biblioteca padrão `stdbool.h` da linguagem C, criada para fins didáticos e experimentais. 
+Uma reinterpretação da biblioteca padrão `stdbool.h` da linguagem C, criada para fins didáticos e experimentais. 
 O código explora o uso de macros para redefinir operadores e criar novas operações booleanas de forma mais legível. 
 **Atenção:** Esta implementação foi criada meramente para fins didáticos e não deve ser utilizada em projetos reais, pois não segue padrões recomendados para produção e pode introduzir ambiguidades ou erros.
 
