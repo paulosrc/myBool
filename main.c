@@ -3,13 +3,16 @@
 #define bool _Bool          // Definição do tipo bool
 #define true  1             // Definição de true como 1
 #define false 0             // Definição de false como 0
-#define not !               // Substitui o operador bitwise ! por NOT
-#define and &               // Substitui o operador bitwise & por AND
-#define or |                // Substitui o operador bitwise | por OR
-#define xor ^               // Substitui o operador bitwise ^ por XOR
+#define not !               // Substitui o operador bitwise ! por not
+#define and &               // Substitui o operador bitwise & por and
+#define or |                // Substitui o operador bitwise | por or
+#define xor ^               // Substitui o operador bitwise ^ por xor
 #define nand(A, B) !(A & B) // Substitui a operação bitwise NAND
 #define nor(A, B) !(A | B)  // Substitui a operação bitwise NOR
 #define nxor(A, B) !(A ^ B) // Substitui a operação bitwise NXOR
+
+#define AND &&              // Substitui o operador lógico && por AND
+#define OR ||               // Substitui o operador lógico || por OR
 
 #define printb(A) (A == true ? printf("true\n") : printf("false\n")) // Macro "printb" para imprimir booleanos diretamente no terminal
 
