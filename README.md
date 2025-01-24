@@ -1,4 +1,4 @@
-# myBool
+# myStdBool
 
 ## Português
 
