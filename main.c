@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-#define bool _Bool          // Definição do tipo bool
+typedef _Bool bool;         // Definição do tipo bool
+
 #define true  1             // Definição de true como 1
 #define false 0             // Definição de false como 0
 #define not !               // Substitui o operador bitwise ! por not
@@ -14,7 +15,7 @@
 #define AND &&              // Substitui o operador lógico && por AND
 #define OR ||               // Substitui o operador lógico || por OR
 
-#define printb(A) (A == true ? printf("true\n") : printf("false\n")) // Macro "printb" para imprimir booleanos diretamente no terminal
+#define printb(A) (A == true ? printf("true\n") : printf("false\n")) // Macro "printb" para imprimir true/false diretamente no terminal
 
 int main() {
     bool x = true;
