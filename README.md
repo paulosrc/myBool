@@ -1,4 +1,4 @@
-# mybool.h
+# myBool
 
 ## Português
 
