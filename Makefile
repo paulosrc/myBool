@@ -2,30 +2,34 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Iinclude
 
 # Nome da biblioteca e executável
-LIB_NAME = mybool.a
-EXEC_NAME = test
+LIB_NAME = libmybool.a
+EXEC_NAME = test.exe
+
+# Diretórios
+SRC_DIR = src
+OBJ_DIR = .
 
 # Arquivos de objeto
-OBJ_FILES = mybool.o main.o
+OBJ_FILES = $(OBJ_DIR)/mybool.o $(OBJ_DIR)/main.o
 
 # Regra padrão
 all: $(LIB_NAME) $(EXEC_NAME)
 
 # Compilar a biblioteca estática
-$(LIB_NAME): mybool.o
+$(LIB_NAME): $(OBJ_DIR)/mybool.o
 	ar rcs $@ $^
 
 # Compilar o executável
 $(EXEC_NAME): $(OBJ_FILES)
-	$(CC) -o $@ $(OBJ_FILES)
+	$(CC) -o $@ $(OBJ_FILES) -L. -lmybool
 
 # Compilar o arquivo .c da biblioteca
-mybool.o: src/mybool.c
-	$(CC) $(CFLAGS) -c src/mybool.c -o mybool.o
+$(OBJ_DIR)/mybool.o: $(SRC_DIR)/mybool.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Compilar o arquivo de teste
-main.o: src/main.c
-	$(CC) $(CFLAGS) -c src/main.c -o main.o
+$(OBJ_DIR)/main.o: $(SRC_DIR)/main.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Limpar os arquivos gerados
 clean:
