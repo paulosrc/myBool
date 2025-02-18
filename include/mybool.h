@@ -40,9 +40,13 @@ static inline bool bit_nor(bool x, bool y)  { return ~(x | y); }
 static inline bool bit_xnor(bool x, bool y) { return ~(x ^ y); }
 
 // Operações lógicas (inline)
-static inline bool logic_not(bool x)         { return !x; }
-static inline bool logic_and(bool x, bool y) { return x && y; }
-static inline bool logic_or(bool x, bool y)  { return x || y; }
+static inline bool logic_not(bool x)          { return !x; }
+static inline bool logic_and(bool x, bool y)  { return x && y; }
+static inline bool logic_or(bool x, bool y)   { return x || y; }
+static inline bool logic_xor(bool x, bool y)  { return (logic_or(logic_and(x, logic_not(y)), logic_and(y, logic_not(x)))); }
+static inline bool logic_nand(bool x, bool y) { return logic_not(logic_and(x, y)); }
+static inline bool logic_nor(bool x, bool y)  { return logic_not(logic_or(x, y)); }
+static inline bool logic_xnor(bool x, bool y) { return logic_not(logic_xor(x, y)); }
 
 // Declarações de funções auxiliares
 static inline bool is_true(bool x)  { return x == true; }
