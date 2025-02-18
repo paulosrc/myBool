@@ -1,6 +1,4 @@
-Aqui está uma versão melhorada do seu README, com informações sobre o objetivo do projeto, como funciona, e instruções sobre como compilar e utilizá-lo, em português e inglês:
 
-```markdown
 # myBool
 
 ## Português
@@ -100,5 +98,3 @@ The `myBool.h` library redefines the boolean type and offers bitwise and logical
    ```bash
    ./test
    ```
-
-```
