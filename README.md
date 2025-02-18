@@ -1,4 +1,3 @@
-
 # myBool
 
 **myBool** é uma reinterpretação da biblioteca padrão `stdbool.h` da linguagem C, criada para fins didáticos e experimentais. Esta biblioteca tem como objetivo proporcionar uma maneira mais legível e acessível de trabalhar com valores booleanos e operações relacionadas.
@@ -17,33 +16,16 @@ A biblioteca `myBool.h` redefine o tipo booleano e oferece operações bit a bit
    git clone https://github.com/seu_usuario/myBool.git
    ```
 
-2. **Criar um arquivo de teste** (`main.c`):
-   ```c
-   #include <stdio.h>
-   #include "myBool.h"
-
-   int main() {
-       bool a = true;
-       bool b = false;
-       
-       printf("a é %s\n", bool_to_string(a));
-       printf("b é %s\n", bool_to_string(b));
-       
-       // Exemplos de operações
-       printf("NOT a: %s\n", bool_to_string(logic_not(a)));
-       printf("a AND b: %s\n", bool_to_string(logic_and(a, b)));
-       printf("a OR b: %s\n", bool_to_string(logic_or(a, b)));
-
-       return 0;
-   }
-   ```
-
-3. **Compilar o código**:
+2. **Para compilar o código e gerar a biblioteca estática**:
    ```bash
-   gcc -o test main.c mybool.c
+   make
    ```
 
 4. **Executar o programa**:
    ```bash
-   ./test
+   make run
+   ```
+5. **Para remover o executável**
+   ```bash
+   make clean
    ```
