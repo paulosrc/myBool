@@ -1,18 +1,55 @@
-typedef _Bool bool; // Definição do tipo bool
+#ifndef MYBOOL_H
+#define MYBOOL_H
 
-#define  true 1     // Definição de true como 1
-#define false 0     // Definição de false como 0
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define   BIT_NOT(x)       ~(x)            // Operação bitwise NOT
-#define   BIT_AND(x, y)    ((x) & (y))     // Operação bitwise AND
-#define    BIT_OR(x, y)    ((x) | (y))     // Operação bitwise OR
-#define   BIT_XOR(x, y)    ((x) ^ (y))     // Operação bitwise XOR
-#define  BIT_NAND(x, y)    !((x) & (y))    // Operação bitwise NAND
-#define   BIT_NOR(x, y)    !((x) | (y))    // Operação bitwise NOR
-#define  BIT_NXOR(x, y)    !((x) ^ (y))    // Operação bitwise NXOR
+#ifdef bool
+#undef bool
+#endif
 
-#define LOGIC_NOT(x)       (!x)            // Operação lógica NOT
-#define LOGIC_AND(x, y)    ((x) && (y))    // Operação lógica AND
-#define  LOGIC_OR(x, y)    ((x) || (y))    // Operação lógica OR
+#ifdef true
+#undef true
+#endif
 
-#define BOOL_TO_STRING(value) (value != 0 ? "true" : "false"); // Transforma o valor bool para string para imprimir no terminal
+#ifdef false
+#undef false
+#endif
+
+#ifdef String
+#undef String
+#endif
+
+// Definições do tipo bool
+typedef _Bool bool;
+
+// Alias para char*
+typedef char* String;
+
+#define true  1
+#define false 0
+
+// Operações bit a bit (inline)
+static inline bool bit_not(bool x)    { return ~x; }
+static inline bool bit_and(bool x, bool y) { return x & y; }
+static inline bool bit_or(bool x, bool y)  { return x | y; }
+static inline bool bit_xor(bool x, bool y) { return x ^ y; }
+static inline bool bit_nand(bool x, bool y) { return ~(x & y); }
+static inline bool bit_nor(bool x, bool y)  { return ~(x | y); }
+static inline bool bit_xnor(bool x, bool y) { return ~(x ^ y); }
+
+// Operações lógicas (inline)
+static inline bool logic_not(bool x)         { return !x; }
+static inline bool logic_and(bool x, bool y) { return x && y; }
+static inline bool logic_or(bool x, bool y)  { return x || y; }
+
+// Declarações de funções auxiliares
+static inline bool is_true(bool x)  { return x == true; }
+const String bool_to_string(bool value);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif // MYBOOL_H
