@@ -30,16 +30,16 @@ typedef char* String;
 #define true  1
 #define false 0
 
-// Operações bit a bit (inline)
-static inline bool bit_not(bool x)    { return ~x; }
-static inline bool bit_and(bool x, bool y) { return x & y; }
-static inline bool bit_or(bool x, bool y)  { return x | y; }
-static inline bool bit_xor(bool x, bool y) { return x ^ y; }
+// Operações bit a bit inline
+static inline bool bit_not(bool x)          { return ~x; }
+static inline bool bit_and(bool x, bool y)  { return x & y; }
+static inline bool bit_or(bool x, bool y)   { return x | y; }
+static inline bool bit_xor(bool x, bool y)  { return x ^ y; }
 static inline bool bit_nand(bool x, bool y) { return ~(x & y); }
 static inline bool bit_nor(bool x, bool y)  { return ~(x | y); }
 static inline bool bit_xnor(bool x, bool y) { return ~(x ^ y); }
 
-// Operações lógicas (inline)
+// Operações lógicas inline
 static inline bool logic_not(bool x)          { return !x; }
 static inline bool logic_and(bool x, bool y)  { return x && y; }
 static inline bool logic_or(bool x, bool y)   { return x || y; }
